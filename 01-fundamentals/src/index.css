@@ -31,6 +31,7 @@ body{
     border-radius: 1rem;
     padding: 2rem;
     text-align: center;
+    position: relative;
 }
 
 .book img {
@@ -38,7 +39,28 @@ body{
     object-fit: cover;
 }
 
+h4 {
+    font-size: 0.75rem;
+    color: #617d98;
+}
+
 .book h2 {
     margin-top: 1rem;
     font-size: 1rem;
+}
+
+span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #c35600;
+    color: #fff;
+    padding: 0.75rem;
+    border-radius: 1rem 0 1rem 0;
+}
+
+h1{
+    text-align: center;
+    margin-top: 4rem;
+    text-transform: capitalize;
 }

@@ -2,57 +2,19 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 
-const books = [
-  {
-    title: "Atomic Habits",
-    img: "https://m.media-amazon.com/images/I/41r6F2LRf8L._SY264_BO1,204,203,200_QL40_FMwebp_.jpg",
-    author: "James Clear",
-    id: 1,
-  },
-  {
-    title: "The Richest Man In Babylon",
-    img: "./images/bookimg.jpg",
-    author: "George S. Clason",
-    id: 2,
-  },
-];
-
-const EventExamples = () => {
-  const handleFormInput = () => {
-    console.log("Handle form input")
-  }
-  const handleButtonClick = () => {
-    alert("Button Clicked")
-  }
-  return (
-    <section>
-      <form>
-        <h2>Typical form</h2>
-        <input type="text" onChange={handleFormInput}  name="example" style={{ margin: "1rem 0" }} />
-      </form>
-      <button onClick={handleButtonClick} >Click Me</button>
-    </section>
-  );
-};
+import books from "./books";
+import { Book } from "./book";
 
 const BookList = () => {
   return (
-    <section className="bookList">
-      <EventExamples />
-      {books.map((book) => {
-        return <Book {...book} key={book.id} />;
-      })}
-    </section>
-  );
-};
-
-const Book = ({ title, img, author }) => {
-  return (
-    <article className="book">
-      <img src={img} alt={title} />
-      <h2>{title}</h2>
-      <h4 style={{ fontSize: ".75rem", color: "lightblue" }}>{author}</h4>
-    </article>
+    <>
+      <h1>amazon best sellers</h1>
+      <section className="bookList">
+        {books.map((book, index) => {
+          return <Book {...book} key={book.id} number={index} />;
+        })}
+      </section>
+    </>
   );
 };
 
